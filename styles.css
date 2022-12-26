@@ -33,6 +33,12 @@ body {
 
 #gameGrid div {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 4rem;
+
 }
 #gameGrid div:hover {
     background-color: rgb(236, 236, 236);
