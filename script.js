@@ -3,10 +3,27 @@ const slot = document.querySelectorAll('.slot');
 const slots = Array.from(slot);
 const resetButton = document.querySelector('.reset');
 
+let gameBoardArray = new Array(9);
+
+
 const addMark = function(e) {
     e.target.textContent = markAlternator(playerMarks);
+    let currentTextContent = e.target.textContent;
     e.target.removeEventListener('click', addMark);
-    console.log('fires');
+    let currentSlotString = e.target.className;
+    
+    const currentSlotNumberGetter = function (slotString) {
+       return slotString.slice(-1);
+    }
+    
+    let currentSlotNumber = currentSlotNumberGetter(currentSlotString);
+    console.log(currentSlotNumber);
+
+    const arrayWriter = function (number) {
+        gameBoardArray[number] = currentTextContent;
+    }
+
+    arrayWriter(currentSlotNumber);
 };
 
 
